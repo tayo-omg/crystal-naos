@@ -6,9 +6,6 @@
   <title>CRYSTAL NAOS - Cleaning Services</title>
 
   <style>
-    /* ==========================
-       THEME TOKENS
-    ========================== */
     :root{
       --bg1: #f8fbff;
       --bg2: #eef7ff;
@@ -36,9 +33,6 @@
       --shadow: 0 18px 55px rgba(0,0,0,.35);
     }
 
-    /* ==========================
-       BASE
-    ========================== */
     *{ box-sizing: border-box; }
     html, body{ height: 100%; }
     body{
@@ -62,9 +56,6 @@
       z-index: 1;
     }
 
-    /* ==========================
-       FUN BACKGROUND FX
-    ========================== */
     .bgFX{
       position: fixed;
       inset: 0;
@@ -85,7 +76,6 @@
       10%{ opacity: 1; }
       100%{ transform: translate3d(0, -25vh, 0) rotate(360deg); opacity: 0; }
     }
-
     .bgFX span:nth-child(1){ left: 6%;  animation-duration: 13s; }
     .bgFX span:nth-child(2){ left: 16%; animation-duration: 10s; animation-delay: -3s; }
     .bgFX span:nth-child(3){ left: 27%; animation-duration: 15s; animation-delay: -7s; }
@@ -97,9 +87,6 @@
     .bgFX span:nth-child(9){ left: 86%; animation-duration: 12s; animation-delay: -2s; }
     .bgFX span:nth-child(10){left: 92%; animation-duration: 9s;  animation-delay: -7s; }
 
-    /* ==========================
-       HEADER + NAV
-    ========================== */
     header{
       position: sticky;
       top: 0;
@@ -179,9 +166,6 @@
     }
     .themeBtn:hover{ transform: translateY(-1px); }
 
-    /* ==========================
-       HERO
-    ========================== */
     .hero{
       padding-top: 56px;
       padding-bottom: 26px;
@@ -285,9 +269,7 @@
       box-shadow: none;
     }
 
-    /* ==========================
-       HERO SLIDESHOW (IMAGES + TEXT)
-    ========================== */
+    /* HERO SLIDESHOW */
     .heroShow{
       margin-top: 22px;
       border: 1px solid var(--stroke);
@@ -297,12 +279,10 @@
       overflow: hidden;
       position: relative;
     }
-
     .heroSlides{
       position: relative;
       min-height: 220px;
     }
-
     .heroSlide{
       position: absolute;
       inset: 0;
@@ -315,28 +295,12 @@
       gap: 14px;
       align-items: center;
     }
-
     @media (max-width: 520px){
-      .heroSlide{
-        grid-template-columns: 1fr;
-        text-align: left;
-      }
+      .heroSlide{ grid-template-columns: 1fr; text-align: left; }
     }
-
-    .heroSlide.active{
-      opacity: 1;
-      transform: translateX(0);
-    }
-
-    .heroSlide h3{
-      margin: 0;
-      font-size: 1.25rem;
-    }
-    .heroSlide p{
-      margin: 6px 0 0;
-      color: var(--muted);
-      font-weight: 700;
-    }
+    .heroSlide.active{ opacity: 1; transform: translateX(0); }
+    .heroSlide h3{ margin: 0; font-size: 1.25rem; }
+    .heroSlide p{ margin: 6px 0 0; color: var(--muted); font-weight: 700; }
 
     .slideImg{
       width: 140px;
@@ -369,13 +333,7 @@
       background: linear-gradient(90deg, var(--accent), var(--accent2));
     }
 
-    /* ==========================
-       SECTIONS + CARDS
-    ========================== */
-    h2{
-      margin: 0 0 12px;
-      font-size: 1.8rem;
-    }
+    h2{ margin: 0 0 12px; font-size: 1.8rem; }
 
     .grid2{
       display: grid;
@@ -402,9 +360,6 @@
     }
     ul li strong{ color: var(--text); }
 
-    /* ==========================
-       REVIEWS
-    ========================== */
     .reviewBox{
       border-left: 5px solid color-mix(in oklab, var(--accent3) 75%, var(--accent));
       background: color-mix(in oklab, var(--card) 72%, transparent);
@@ -422,9 +377,6 @@
       font-weight: 700;
     }
 
-    /* ==========================
-       FORM
-    ========================== */
     form label{
       display: block;
       margin: 12px 0 6px;
@@ -459,10 +411,8 @@
       transition: transform .15s ease, filter .2s ease;
     }
     .submitBtn:hover{ transform: translateY(-1px); filter: brightness(1.04); }
+    .submitBtn:disabled{ opacity: .75; cursor: not-allowed; }
 
-    /* ==========================
-       WHATSAPP BUTTON
-    ========================== */
     .whatsapp-btn{
       position: fixed;
       bottom: 18px;
@@ -481,9 +431,6 @@
     }
     .whatsapp-btn:hover{ filter: brightness(1.05); }
 
-    /* ==========================
-       FOOTER
-    ========================== */
     footer{
       padding: 22px 18px;
       text-align: center;
@@ -551,15 +498,13 @@
 
       <div class="ctaRow">
         <a class="btn primary" href="#contact">Book a Cleaning ✨</a>
-        <button class="btn ghost" id="sparkBtn">Tap!</button>
+        <button class="btn ghost" id="sparkBtn" type="button">Tap!</button>
       </div>
 
-      <!-- ✅ HERO SLIDESHOW WRAPPER (FIXED) -->
+      <!-- HERO SLIDESHOW -->
       <div class="heroShow" aria-label="Highlights slideshow">
-
         <div class="heroSlides" id="heroSlides">
           <div class="heroSlide active">
-            <!-- IMPORTANT: Use EXACT file names + extensions (lowercase recommended) -->
             <img class="slideImg" alt="Cleaning image 1" src="img1.jpeg">
             <div>
               <h3>🧼 Residential Cleaning</h3>
@@ -645,8 +590,8 @@
       </div>
 
       <div class="ctaRow" style="margin-top:10px;">
-        <button class="btn ghost" id="prevReview">← Prev</button>
-        <button class="btn ghost" id="nextReview">Next →</button>
+        <button class="btn ghost" id="prevReview" type="button">← Prev</button>
+        <button class="btn ghost" id="nextReview" type="button">Next →</button>
       </div>
     </section>
 
@@ -654,15 +599,22 @@
       <h2>Book a Cleaning</h2>
 
       <div class="card">
+        <!-- ✅ VERCEL FIX: send bookings via Web3Forms (emails you) -->
         <form id="contact-form">
+          <!-- Optional: email subject -->
+          <input type="hidden" name="subject" value="New Booking Request - Crystal Naos">
+
+          <!-- Optional: simple spam trap (hidden) -->
+          <input type="checkbox" name="botcheck" style="display:none">
+
           <label>Name</label>
-          <input type="text" id="name" required />
+          <input type="text" id="name" name="name" required />
 
           <label>Email</label>
-          <input type="email" id="email" required />
+          <input type="email" id="email" name="email" required />
 
           <label>Service Type</label>
-          <select id="service" required>
+          <select id="service" name="service" required>
             <option value="">-- Select --</option>
             <option value="residential">Residential Cleaning</option>
             <option value="commercial">Commercial Cleaning</option>
@@ -672,12 +624,12 @@
           </select>
 
           <label>Message / Details</label>
-          <textarea id="message" rows="5" required></textarea>
+          <textarea id="message" name="message" rows="5" required></textarea>
 
-          <button class="submitBtn" type="submit">Submit Request ✅</button>
+          <button class="submitBtn" id="submitBtn" type="submit">Submit Request ✅</button>
         </form>
 
-        <p id="contact-message" style="display:none; margin-top:16px; font-weight:900; color: var(--accent3);"></p>
+        <p id="contact-message" style="display:none; margin-top:16px; font-weight:900;"></p>
 
         <div style="margin-top:16px; color: var(--muted); font-weight:800;">
           <p><strong>Phone:</strong> +234 9137385367</p>
@@ -735,6 +687,7 @@
         const d = document.createElement("button");
         d.className = "dot" + (i === 0 ? " active" : "");
         d.setAttribute("aria-label", "Go to slide " + (i+1));
+        d.type = "button";
         d.addEventListener("click", () => goHero(i, true));
         heroDots.appendChild(d);
       });
@@ -777,7 +730,7 @@
     const nextReview = document.getElementById("nextReview");
 
     function renderReview(){
-      reviewBox.firstChild.textContent = reviews[reviewIndex].text;
+      reviewBox.childNodes[0].textContent = reviews[reviewIndex].text;
       reviewMeta.textContent = reviews[reviewIndex].meta;
     }
     prevReview.addEventListener("click", () => {
@@ -814,15 +767,58 @@
       }
     });
 
-    // FORM SUBMISSION MESSAGE
+    // ✅ BOOKING FORM -> Web3Forms (works on Vercel)
+    // 1) Create an access key on Web3Forms and paste it below
+    const WEB3FORMS_ACCESS_KEY = "PASTE_YOUR_ACCESS_KEY_HERE";
+
     const form = document.getElementById("contact-form");
     const msg = document.getElementById("contact-message");
+    const submitBtn = document.getElementById("submitBtn");
 
-    form.addEventListener("submit", function(e) {
+    form.addEventListener("submit", async (e) => {
       e.preventDefault();
+
       msg.style.display = "block";
-      msg.textContent = "✅ Your request has been received! We will contact you soon.";
-      form.reset();
+      msg.style.color = "color-mix(in oklab, var(--accent) 75%, var(--text))";
+      msg.textContent = "⏳ Sending your request…";
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Submitting…";
+
+      try{
+        const formData = new FormData(form);
+        formData.append("access_key", WEB3FORMS_ACCESS_KEY);
+
+        const object = Object.fromEntries(formData);
+        const json = JSON.stringify(object);
+
+        const response = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+          },
+          body: json
+        });
+
+        const result = await response.json();
+
+        if(result.success){
+          msg.style.color = "var(--accent3)";
+          msg.textContent = "✅ Your request has been received! We will contact you soon.";
+          form.reset();
+        } else {
+          msg.style.color = "color-mix(in oklab, red 70%, var(--text))";
+          msg.textContent = "❌ Submission failed. Please try again or message us on WhatsApp.";
+          console.log("Web3Forms Error:", result);
+        }
+      } catch(err){
+        msg.style.color = "color-mix(in oklab, red 70%, var(--text))";
+        msg.textContent = "❌ Network error. Please try again or message us on WhatsApp.";
+        console.log(err);
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Submit Request ✅";
+      }
     });
   </script>
 </body>
